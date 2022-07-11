@@ -1,0 +1,34 @@
+{
+  "author": {
+    "name": "Christopher Herrera",
+    "email": "chris.syst3@gmail.com",
+    "from": "Guatemala"
+  },
+  "database" : {
+    "host": "74.91.121.96",
+    "username": "chris",
+    "password": "Chris4589@",
+    "port": 3306,
+    "useSSL": true,
+    "db": "nodejs"
+  },
+  "localServer": {
+    "privateKeyJWT": "s3cr3tk3yn0s0tr05",
+    "port": 8080,
+    "routeTest": "/api/",
+    "routeRoles": "/api/roles/",
+    "routeUsers": "/api/users/",
+    "routeAbout": "/api/about/",
+    "routeWorkTeam": "/api/WorkTeam/",
+    "routeProyects": "/api/proyects/",
+    "routePhoto": "/api/photos/",
+    "routeAboutActive": "/api/about/active",
+    "routeMission": "/api/mission/",
+    "routeMissionActive": "/api/mission/active",
+    "routeVision": "/api/vision/",
+    "routeVisionActive": "/api/vision/active",
+    "routeAuthLogin": "/api/auth/login",
+    "roleDefault": "ROLE_USER",
+    "defaultStatusAbout": false
+  }
+}

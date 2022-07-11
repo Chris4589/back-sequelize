@@ -1,0 +1,22 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "indent": [2, 4],
+        "quotes": [2, "single"],
+        "linebreak-style": [2, "unix"],
+        "semi": [2, "always"],
+        "no-tabs": 0,
+        "comma-dangle": ["error", "never"],
+        "quote-props": 0,
+        "no-unused-vars": [1, { "ignoreSiblings": true, "argsIgnorePattern": "res|next|^err" }],
+        "max-len": ["error", { "code": 200 }]
+    }
+}

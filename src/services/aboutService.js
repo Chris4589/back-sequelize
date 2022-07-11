@@ -11,7 +11,7 @@ exports.AboutPost = async (req, res, next) => {
             .connectDB()
             .query('INSERT INTO about (userId, isActive, title, description) VALUES (?, ?, ?, ?) ', {
                 replacements: [
-                    1,
+                    req.userId,
                     req.body.isActive,
                     req.body.title,
                     req.body.description

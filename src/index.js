@@ -39,11 +39,13 @@ utils.connectDB()
         ], roleService.getRoles);
 
         app.post(config.get('localServer.routeRoles'), [
-
+                utils.AuthVerify,
+            utils.JoiValidate(schemas.SchemaRole.create, 'body')
         ], roleService.createRole);
 
         app.post(config.get('localServer.routeUsers'), [
-
+                utils.AuthVerify,
+                utils.JoiValidate(schemas.SchemaUser.create, 'body')
         ], userService.createUser);
 
         app.get(config.get('localServer.routeUsers'), [
@@ -51,7 +53,8 @@ utils.connectDB()
         ], userService.getUsers);
 
         app.post(config.get('localServer.routeAbout'), [
-
+                utils.AuthVerify,
+                utils.JoiValidate(schemas.SchemaAbout.create, 'body')
         ], aboutService.AboutPost);
 
         app.get(config.get('localServer.routeAbout'), [
@@ -59,7 +62,9 @@ utils.connectDB()
         ], aboutService.AboutList);
 
         app.put(config.get('localServer.routeAbout'), [
-
+                utils.AuthVerify,
+                utils.JoiValidate(schemas.SchemaAbout.ById, 'query'),
+                utils.JoiValidate(schemas.SchemaAbout.create, 'body')
         ], aboutService.UpdateAbout);
 
         app.get(config.get('localServer.routeAboutActive'), [
@@ -67,7 +72,8 @@ utils.connectDB()
         ], aboutService.AboutGetBy);
 
         app.post(config.get('localServer.routeWorkTeam'), [
-
+                utils.AuthVerify,
+                utils.JoiValidate(schemas.SchemaTeam.create, 'body')
         ], workTeamService.createWorkTeam);
 
         app.get(config.get('localServer.routeWorkTeam'), [
@@ -75,11 +81,14 @@ utils.connectDB()
         ], workTeamService.ListWorkTeam);
 
         app.delete(config.get('localServer.routeWorkTeam'), [
-
+                utils.AuthVerify,
+                utils.JoiValidate(schemas.SchemaTeam.ById, 'query')
         ], workTeamService.DeleteWorkTeam);
 
         app.put(config.get('localServer.routeWorkTeam'), [
-
+                utils.AuthVerify,
+                utils.JoiValidate(schemas.SchemaTeam.ById, 'query'),
+                utils.JoiValidate(schemas.SchemaTeam.create, 'body')
         ], workTeamService.UpdateWorkTeam);
 
         app.post(config.get('localServer.routeProyects'), [

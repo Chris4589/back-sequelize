@@ -46,3 +46,41 @@ exports.SchemaProyect = {
       proyectId: joi.number().required()
    })
 };
+
+exports.SchemaTeam = {
+   create: joi.object({
+      description: joi.string().required().min(10),
+      fullName: joi.string().required().min(4),
+      photo: joi.string().required().min(10),
+      position: joi.string().required().min(4)
+   }),
+   ById: joi.object({
+      groupId: joi.number().required()
+   })
+};
+
+exports.SchemaRole = {
+   create: joi.object({
+      role: joi.string().required().min(4),
+   })
+};
+
+exports.SchemaUser = {
+   create: joi.object({
+      correo: joi.string().required().min(MIN_EMAIL).max(MAX_EMAIL),
+      name: joi.string().required().min(4),
+      password: joi.string().required().min(MIN_PASSWORD).max(MAX_PASSWORD)
+   })
+};
+
+exports.SchemaAbout = {
+   create: joi.object({
+      description: joi.string().required().min(10),
+      title:  joi.string().required().min(4),
+      isActive: joi.bool().required()
+   }),
+   ById: joi.object({
+      aboutId: joi.number().required()
+   })
+};
+

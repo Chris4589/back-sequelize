@@ -9,7 +9,7 @@ exports.createWorkTeam = async (req, res, next) => {
             .connectDB()
             .query('INSERT INTO workTeam (userId, fullName, photo, position, description) VALUES (?, ?, ?, ?, ?)', {
             replacements: [
-                1,
+                req.userId,
                 req.body.fullName,
                 req.body.photo,
                 req.body.position,
